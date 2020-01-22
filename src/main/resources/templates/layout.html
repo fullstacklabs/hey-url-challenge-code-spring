@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:fragment="layout(body)" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>HeyUrl</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="<%= root_path %>" class="brand-logo">HeyURL!</a>
+      </div>
+    </nav>
+    <main role="main" class="container" th:insert="${body}">
+    </main>
+  </body>
+</html>
