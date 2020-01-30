@@ -1,7 +1,7 @@
 # HeyURL! Code Challenge
 
 ## HeyURL! Code Challenge 
-This repository has been created as a code challenge for candidates with FullStack Labs. The candidate will clone and setup an existing Django application. The application will contain routes, migrations, models, and minimal views but with no actual functionality created. The candidate will show all her/his expertise building apps with the Django framework and problem solving skills.
+This repository has been created as a code challenge for candidates with FullStack Labs. The candidate will clone and setup an existing Spring MVC application. The application will contain routes, models, and minimal views but with no actual functionality created. The candidate will show all her/his expertise building apps with the Spring MVC framework and problem solving skills.
 
 ## Overview
 HeyURL! is a service to create awesome friendly URLs to make it easier for people to remember. Our team developed some mockup views but don't have our awesome functionality in place yet.
@@ -26,29 +26,14 @@ Original URL format should be validated
 
 1. Clone repository
 
-2. Install Ruby 2.5.1
+2. Install JDK 12+
 
-```sh
-$ rvm install 2.5.1
-```
-
-3. Install PostgreSQL >9.4
-
-```sh
-$ brew install postgresql
-```
-
-4. Run setup
-```sh
-$ bin/setup
-```
+3. Run the server:
+   ```./mvnw spring-boot:run```
 
 ## Considerations
 
-1. Check routes defined in `config/routes.rb`
-1. Check controller actions in `app/controllers/urls_controller.rb`
-1. Check views in `app/views/urls/`
+1. Check controller actions in `src/main/java/co/fullstacklabs/heyurl/controllers`
+1. Check views in `src/main/resources/templates`
 1. Google Charts is already added to display charts, you can use any library
-1. Use the `browser` gem already installed to extract information about each
-   click tracked
 

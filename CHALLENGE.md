@@ -11,7 +11,7 @@ Hey URL! is a service to create awesome friendly URLs to make it easier for peop
 * We want to create a metrics panel for the user to view the stats for every short url. The user should be able to see total clicks per day on the current month. What browsers and platforms.
 * Implement API endpoint to get 10 latest urls
 * If someone try to visit a invalid short url then it should return a custom 404 page
-* Controllers, endpoints and models should be fully tested with rspec
+* Controllers, endpoints and models should be fully tested
 
 # URL format
 * Max length 5 character e.g.  NELNT
