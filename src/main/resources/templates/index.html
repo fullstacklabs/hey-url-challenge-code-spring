@@ -6,7 +6,7 @@
     <!--<% end %>-->
     <div class="row">
       <div class="col m12">
-        <!--<%= form_for @url do |f| %>-->
+        <form action="/create" method="POST">
           <div class="card">
             <div class="card-content">
               <div class="row">
@@ -16,7 +16,7 @@
               </div>
               <div class="row">
                 <div class="col m6 offset-m2">
-                  <!--<%= f.text_field :original_url, class: 'validate form-control', placeholder: 'Your original URL here' %>-->
+                  <input type="text" name="original_url" placeholder="Your original URL here" />
                 </div>
                 <div class="col m2">
                   <button type="submit" class="waves-effect waves-light btn">Shorten URL</button>
@@ -24,7 +24,7 @@
               </div>
             </div>
           </div>
-        <!--<% end %>-->
+        </form>
       </div>
     </div>
     <table class="table highlight">
