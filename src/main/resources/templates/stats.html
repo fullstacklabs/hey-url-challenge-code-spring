@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: layout(~{::body})}" xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <div class="row">
+      <div class="col s12">
+        <ul class="card-panel collection with-header">
+          <li class="collection-header">
+            <h4>
+              Stats for <span th:text="${url.id}"></span>
+            </h4>
+          </li>
+          <li class="collection-item">Created <span th:text="${#dates.format(url.createdAt, 'MMM d, yyyy')}"></span></li>
+          <li class="collection-item">
+            Original URL: <a th:href="${url.target}" th:text="${url.target}"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <div id="total-clicks-chart"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6">
+        <div class="card-panel">
+          <div id="platforms-chart"></div>
+        </div>
+      </div>
+
+      <div class="col s6">
+        <div class="card-panel">
+          <div id="browsers-chart"></div>
+        </div>
+      </div>
+    </div>
+
+    <script th:inline="javascript">
+      google.charts.load('current', {packages: ['corechart']});
+      google.charts.setOnLoadCallback(drawCharts);
+
+      function drawTotalClicksChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['day', 'clicks'],
+        ].concat(Object.entries([[${daily_clicks}]])));
+
+        var options = {
+          title: 'total clicks',
+          haxis: {
+            title: 'day of month'
+          },
+          vaxis: {
+            title: 'clicks'
+          }
+        };
+
+        var chart = new google.visualization.AreaChart(
+          document.getElementById('total-clicks-chart')
+        );
+        chart.draw(data, options);
+      }
+
+      function drawBrowsersChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['browser', 'clicks'],
+        ].concat(Object.entries([[${browsers_clicks}]])));
+
+        var options = {
+          title: 'Browsers'
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById('browsers-chart')
+        );
+        chart.draw(data, options);
+      }
+
+      function drawPlatformsChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['platform', 'clicks'],
+        ].concat(Object.entries([[${platform_clicks}]])));
+
+        var options = {
+          title: 'Platform'
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById('platforms-chart')
+        );
+        chart.draw(data, options);
+      }
+
+      function drawCharts() {
+        drawTotalClicksChart();
+        drawBrowsersChart();
+        drawPlatformsChart();
+      }
+     </script>
+  </body>
+</html>

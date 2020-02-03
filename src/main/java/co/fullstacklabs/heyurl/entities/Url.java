@@ -1,20 +1,18 @@
 package co.fullstacklabs.heyurl.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.Date;
 
-@Entity
 public class Url {
-    @Id
     private String id;
     private String target;
-
+    private Date created_at;
 
     protected Url() {}
 
     public Url(String id, String target) {
         this.id = id;
         this.target = target;
+        this.created_at = new Date();
     }
 
 
@@ -25,6 +23,11 @@ public class Url {
     public String getTarget() {
         return target;
     }
+
+    public Date getCreatedAt() {
+        return (Date) created_at.clone();
+    }
+
 
     @Override
     public String toString() {
