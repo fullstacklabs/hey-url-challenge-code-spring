@@ -1,20 +1,41 @@
 # Summary
-For this code challenge a Candidate will clone and setup an existing Rails application. The rails app will contain routes, migrations, models, controllers and some mockup views but with no actual funcionality created. The candidate will show all his/her expertise building apps with the Rails framework and problem solving skills.
 
-# Overview
-Hey URL! is a service to create awesome friendly URLs to make it easier for people to remember. Our Team developed some mockup views but we don’t have our awesome functionality yet.
+Hey URL! is a service to create awesome friendly URLs to make it easier
+for people to remember. Users can create a short URL from any other URL:
+the application will generate a short ID (e.g. NELNT) for the URL and
+provide a new URL based on the ID that redirects to the original. Every
+time someone follows the redirect the application will record
+information about their visit so it can display statistics.
+
+We have provided a skeleton Spring MVC application which contains a few
+routes and some basic views so that you don't have to spend your time
+setting up the framework or fighting with HTML and CSS. You will need to
+persist the entities with Spring Data JPA and build out the
+functionality of the controllers.
 
 # REQUIREMENTS
-* Implement actions to create shorter urls based on full url params
-* If URL is not valid the application returns an error message to the user
-* We want to give to our users a way to metric their URLs. Every time that someone clicks their URL, it should record that click and also user platform and browser using user agent request header (Browser gem).
-* We want to create a metrics panel for the user to view the stats for every short url. The user should be able to see total clicks per day on the current month. What browsers and platforms.
-* Implement API endpoint to get 10 latest urls
-* If someone try to visit a invalid short url then it should return a custom 404 page
-* Controllers, endpoints and models should be fully tested
+
+These are the requirements for completion of the challenge. They're
+listed in priority order, so you should complete each one before moving
+on to the next.
+
+1. Implement the action to create shorter urls based on full url when
+   the user submits the creation form.
+1. If submitted URL is not valid the application should return an error
+   message to the user, rather than creating an invalid short URL.
+1. We want to our users to see metrics for their URLs. Every time
+   someone clicks their URL, it should record that click and also
+   user platform and browser using the `User-Agent` request header.
+1. The existing mock metrics page needs to be updated to show real data.
+1. Implement API endpoint to get the 10 latest urls
+1. If someone tries to visit a invalid short URL they should receive a
+   nice friendly error page, not the Spring default 404 page
+1. Controllers, endpoints and models should be fully tested
+
 
 # URL format
-* Max length 5 character e.g.  NELNT
+
+* Max length 5 characters, e.g.  NELNT
 * Allows Uppercase and Lowercase characters
 * Allows Number
 * Any non-word character is not allowed e.g whitespaces, tab,% ,$.* etc
@@ -59,8 +80,3 @@ Also, we need to create a way to get the 10 latest urls from an API endpoint. it
   "included": []
 }
 ```
-
-Accomplishment
-Completed functionality 70%
-Completed test 20 %
-Completed bonus 10%
