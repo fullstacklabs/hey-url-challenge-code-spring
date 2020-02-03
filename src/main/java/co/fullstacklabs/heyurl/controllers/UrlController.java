@@ -18,7 +18,15 @@ public class UrlController {
         // TODO: load 10 most recent URLs from the DB
         model.addAttribute("urls", Arrays.asList(
             new Url("AACDC", "https://example.com/"),
-            new Url("ALGJH", "https://example.org/")
+            new Url("ALGJH", "https://example.org/"),
+            new Url("JFIDS", "https://example.org/"),
+            new Url("UBSHF", "https://example.org/"),
+            new Url("WOKRU", "https://example.org/"),
+            new Url("OHLAN", "https://example.org/"),
+            new Url("POSTU", "https://example.org/"),
+            new Url("KILOM", "https://example.org/"),
+            new Url("MIKRO", "https://example.org/"),
+            new Url("ANTUS", "https://example.org/")
         ));
         return "index";
     }
